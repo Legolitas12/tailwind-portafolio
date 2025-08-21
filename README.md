@@ -12,7 +12,6 @@ Want to build a Professional Developer Portfolio using just HTML, CSS, JS, and T
 ## Prerequisites
 Make sure you have **Node.js** and **npm** installed on your machine. If not, you can download them from [here](https://nodejs.org/).
 
-<a href="https://youtu.be/IMpYS8kDI4g" target="_blank">Watch Tutorial</a>
 
 ## Instructions
 1. Open **Command Prompt** or **VS Code Terminal** in your project folder.
