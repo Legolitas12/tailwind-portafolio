@@ -14,51 +14,57 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <title>Tailwind Portfolio</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("service_i9dfda3");
+  })();
+</script>
 </head>
 
-<body class="font-sans text-gray-900 dark:text-white bg-white dark:bg-dark-background transition-colors duration-300">
+<body class="font-sans text-gray-900 transition-colors duration-300 bg-white dark:text-white dark:bg-dark-background">
     <!-- Dark mode background gradients -->
-    <div class="fixed inset-0 -z-10 opacity-0 dark:opacity-100 transition-opacity duration-500 pointer-events-none">
+    <div class="fixed inset-0 transition-opacity duration-500 opacity-0 pointer-events-none -z-10 dark:opacity-100">
         <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"></div>
     </div>
 
     <!-- Header -->
     <header
-        class="fixed w-full top-0 z-50 bg-white/95 dark:bg-dark-background/95 backdrop-blur-sm shadow-sm transition-all duration-300">
-        <div class="container mx-auto px-4">
-            <nav class="flex justify-between items-center py-4">
+        class="fixed top-0 z-50 w-full transition-all duration-300 shadow-sm bg-white/95 dark:bg-dark-background/95 backdrop-blur-sm">
+        <div class="container px-4 mx-auto">
+            <nav class="flex items-center justify-between py-4">
                 <div class="flex items-center">
                     <span class="text-xl font-extrabold">Samuel Patiño</span>
-                    <span class="text-primary text-2xl ml-1">←</span>
+                    <span class="ml-1 text-2xl text-primary">←</span>
                 </div>
-                <ul class="hidden md:flex space-x-8">
+                <ul class="hidden space-x-8 md:flex">
                     <li>
                         <a href="#features"
-                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Showcase</a>
+                            class="text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary">Showcase</a>
                     </li>
                     <li>
                         <a href="#about"
-                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                            class="text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary">About</a>
                     </li>
                     <li>
                         <a href="#skills"
-                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Skills</a>
+                            class="text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary">Skills</a>
                     </li>
                     <li>
                         <a href="#projects"
-                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
+                            class="text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary">Projects</a>
                     </li>
                     <li>
                         <a href="#contact"
-                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                            class="text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary">Contact</a>
                     </li>
                 </ul>
                 <div class="flex items-center space-x-4">
                     <button id="themeToggle" class="">
-                        <i class="fa-solid fa-moon text-gray-600 dark:text-gray-400"></i>
+                        <i class="text-gray-600 fa-solid fa-moon dark:text-gray-400"></i>
                     </button>
-                    <button class="md:hidden p-2" id="menuToggle">
-                        <div class="w-6 h-5 flex flex-col justify-between">
+                    <button class="p-2 md:hidden" id="menuToggle">
+                        <div class="flex flex-col justify-between w-6 h-5">
                             <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
                             <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
                             <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
@@ -71,74 +77,74 @@
 
     <!-- Mobile Menu -->
     <div id="mobileMenu"
-        class="fixed inset-0 bg-white dark:bg-dark-background z-50 transform translate-x-full transition-transform duration-300 md:hidden">
-        <div class="container mx-auto px-4 h-full flex flex-col">
-            <div class="flex justify-between items-center py-4">
+        class="fixed inset-0 z-50 transition-transform duration-300 transform translate-x-full bg-white dark:bg-dark-background md:hidden">
+        <div class="container flex flex-col h-full px-4 mx-auto">
+            <div class="flex items-center justify-between py-4">
                 <div class="flex items-center">
                     <span class="text-xl font-extrabold">Samuel Patiño</span>
-                    <span class="text-primary text-2xl ml-1">●</span>
+                    <span class="ml-1 text-2xl text-primary">●</span>
                 </div>
                 <button id="closeMenu" class="p-2">
-                    <i class="fa-solid fa-square-xmark text-gray-600 dark:text-gray-400 text-2xl"></i>
+                    <i class="text-2xl text-gray-600 fa-solid fa-square-xmark dark:text-gray-400"></i>
                 </button>
             </div>
-            <ul class="flex-1 flex flex-col justify-center items-center space-y-8">
+            <ul class="flex flex-col items-center justify-center flex-1 space-y-8">
                 <li>
                     <a href="#features"
-                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Showcase</a>
+                        class="text-2xl text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary">Showcase</a>
                 </li>
                 <li>
                     <a href="#About"
-                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                        class="text-2xl text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary">About</a>
                 </li>
                 <li>
                     <a href="#skills"
-                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Skills</a>
+                        class="text-2xl text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary">Skills</a>
                 </li>
                 <li>
                     <a href="#projects"
-                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
+                        class="text-2xl text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary">Projects</a>
                 </li>
                 <li>
                     <a href="#contact"
-                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                        class="text-2xl text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary">Contact</a>
                 </li>
             </ul>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden">
-        <div class="container mx-auto px-4">
+    <section id="hero" class="relative flex items-center min-h-screen pt-20 pb-16 overflow-hidden">
+        <div class="container px-4 mx-auto">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <h1 class="mb-6 text-4xl font-bold md:text-6xl">
                     The <span
-                        class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">React
+                        class="text-transparent bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text">React
                         Developer</span> For The Web
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8">
+                <p class="mb-8 text-xl text-gray-600 md:text-2xl dark:text-gray-400">
                     Creating <strong>high-quality web applications</strong> with modern tools and best practices for
                     exceptional user experiences.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <div class="flex flex-col justify-center gap-4 mb-12 sm:flex-row">
                     <a href="#projects"
-                        class="px-8 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10">
+                        class="px-8 py-3 text-white transition-all duration-300 transform rounded-lg shadow-lg bg-primary hover:bg-blue-600 hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10">
                         View Projects
                     </a>
                     <a href="#about"
-                        class="px-8 py-3 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors">Learn
+                        class="px-8 py-3 text-gray-900 transition-colors bg-white border border-gray-200 rounded-lg dark:bg-dark-background-secondary dark:text-white dark:border-gray-700 hover:border-gray-900 dark:hover:border-white">Learn
                         More</a>
                 </div>
-                <div class="bg-gray-100 dark:bg-dark-background-secondary rounded-lg overflow-hidden shadow-lg max-w-2xl mx-auto"
+                <div class="max-w-2xl mx-auto overflow-hidden bg-gray-100 rounded-lg shadow-lg dark:bg-dark-background-secondary"
                     id="terminal-container">
-                    <div class="flex items-center space-x-2 p-3 bg-gray-200 dark:bg-dark-background">
-                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                    <div class="flex items-center p-3 space-x-2 bg-gray-200 dark:bg-dark-background">
+                        <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                        <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                        <span class="w-3 h-3 bg-green-500 rounded-full"></span>
                     </div>
                     <div class="p-6 font-mono terminal-content">
                         <span class="text-green-500">$</span> <span
-                            class="command-text text-gray-900 dark:text-white"></span>
+                            class="text-gray-900 command-text dark:text-white"></span>
                     </div>
                 </div>
             </div>
@@ -147,21 +153,21 @@
 
     <!-- Features Section -->
     <section id="features"
-        class="py-24 bg-gray-50 dark:bg-dark-background-secondary  translate-y-4 transition-all duration-500 opacity-0">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What's in my Toolkit</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
+        class="py-24 transition-all duration-500 translate-y-4 opacity-0 bg-gray-50 dark:bg-dark-background-secondary">
+        <div class="container px-4 mx-auto">
+            <h2 class="mb-4 text-3xl font-bold text-center md:text-4xl">What's in my Toolkit</h2>
+            <p class="mb-16 text-xl text-center text-gray-600 dark:text-gray-400">
                 Everything needed to build great products on the web.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                 <!-- Feature Card 1 -->
                 <div
-                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-paintbrush text-primary text-xl"></i>
+                    class="p-8 transition-all duration-300 transform bg-white rounded-lg shadow-lg dark:bg-dark-background hover:shadow-xl hover:-translate-y-1">
+                    <div class="flex items-center justify-center w-12 h-12 mb-6 rounded-full bg-primary/10">
+                        <i class="text-xl fa-solid fa-paintbrush text-primary"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Modern UI Design</h3>
+                    <h3 class="mb-4 text-xl font-bold">Modern UI Design</h3>
                     <p class="text-gray-600 dark:text-gray-400">Creating beautiful, responsive interfaces that look
                         great on any device
                         using the latest design
@@ -169,31 +175,31 @@
                 </div>
                 <!-- Feature Card 2 -->
                 <div
-                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-code text-primary text-xl"></i>
+                    class="p-8 transition-all duration-300 transform bg-white rounded-lg shadow-lg dark:bg-dark-background hover:shadow-xl hover:-translate-y-1">
+                    <div class="flex items-center justify-center w-12 h-12 mb-6 rounded-full bg-primary/10">
+                        <i class="text-xl fa-solid fa-code text-primary"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Clean Code</h3>
+                    <h3 class="mb-4 text-xl font-bold">Clean Code</h3>
                     <p class="text-gray-600 dark:text-gray-400">Writing maintainable, efficient code following best
                         practices and modern development standards.</p>
                 </div>
                 <!-- Feature Card 3 -->
                 <div
-                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-bolt text-primary text-xl"></i>
+                    class="p-8 transition-all duration-300 transform bg-white rounded-lg shadow-lg dark:bg-dark-background hover:shadow-xl hover:-translate-y-1">
+                    <div class="flex items-center justify-center w-12 h-12 mb-6 rounded-full bg-primary/10">
+                        <i class="text-xl fa-solid fa-bolt text-primary"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Performance Optimization</h3>
+                    <h3 class="mb-4 text-xl font-bold">Performance Optimization</h3>
                     <p class="text-gray-600 dark:text-gray-400">Ensuring fast load times and smooth experiences through
                         efficient code and asset optimization.</p>
                 </div>
                 <!-- Feature Card 4 -->
                 <div
-                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-mobile-alt text-primary text-xl"></i>
+                    class="p-8 transition-all duration-300 transform bg-white rounded-lg shadow-lg dark:bg-dark-background hover:shadow-xl hover:-translate-y-1">
+                    <div class="flex items-center justify-center w-12 h-12 mb-6 rounded-full bg-primary/10">
+                        <i class="text-xl fa-solid fa-mobile-alt text-primary"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Responsive Development</h3>
+                    <h3 class="mb-4 text-xl font-bold">Responsive Development</h3>
                     <p class="text-gray-600 dark:text-gray-400">Building websites that work flawlessly across all screen
                         sizes, from phones to large displays.</p>
                 </div>
@@ -203,41 +209,41 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 translate-y-4 transition-all duration-500 opacity-0">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section id="about" class="py-24 transition-all duration-500 translate-y-4 opacity-0">
+        <div class="container px-4 mx-auto">
+            <div class="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
-                    <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
+                    <h2 class="mb-6 text-3xl font-bold md:text-4xl">About Me</h2>
+                    <p class="mb-6 text-xl text-gray-600 dark:text-gray-400">
                         I'm a frontend developer focused on crafting clean & user-friendly experiences.
                     </p>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                    <p class="mb-6 text-gray-600 dark:text-gray-400">
                         I build responsive websites that are fast, easy to use, and follow best coding practices. My
                         expertise includes HTML, CSS, JavaScript, and modern frameworks to create dynamic, engaging
                         interfaces with clean, optimized code.
                     </p>
-                    <p class="text-gray-600 dark:text-gray-400 mb-8">
+                    <p class="mb-8 text-gray-600 dark:text-gray-400">
                         When I'm not coding, you can find me exploring new technologies, contributing to open-source
                         projects, or enjoying a good book.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex flex-col gap-4 sm:flex-row">
                         <a href="#contact"
-                            class="px-8 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10 text-center">
+                            class="px-8 py-3 text-center text-white transition-all duration-300 transform rounded-lg shadow-lg bg-primary hover:bg-blue-600 hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10">
                             Contact Me
                         </a>
                         <a href="RESUME.pdf" download
-                            class="px-8 py-3 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors text-center">Download
+                            class="px-8 py-3 text-center text-gray-900 transition-colors bg-white border border-gray-200 rounded-lg dark:bg-dark-background-secondary dark:text-white dark:border-gray-700 hover:border-gray-900 dark:hover:border-white">Download
                             Resume</a>
                     </div>
                 </div>
                 <div class="relative">
                     <div
-                        class="w-72 h-72 mx-auto animate-morph bg-gradient-to-br from-primary via-secondary to-accent rounded-full relative overflow-hidden">
+                        class="relative mx-auto overflow-hidden rounded-full w-72 h-72 animate-morph bg-gradient-to-br from-primary via-secondary to-accent">
                         <div
-                            class="absolute inset-0 bg-gradient-to-br from-primary/50 via-secondary/50 to-accent/50 rounded-full blur-2xl animate-morph">
+                            class="absolute inset-0 rounded-full bg-gradient-to-br from-primary/50 via-secondary/50 to-accent/50 blur-2xl animate-morph">
                         </div>
                         <img src="../assets/profile-1.png" alt="Profile Photo"
-                            class="absolute inset-0 w-full h-full object-cover z-10">
+                            class="absolute inset-0 z-10 object-cover w-full h-full">
                     </div>
                 </div>
             </div>
@@ -246,70 +252,70 @@
 
     <!-- Skills Section -->
     <section id="skills"
-        class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">My Skills</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">Technologies and tools I use to bring
+        class="py-24 transition-all duration-500 translate-y-4 opacity-0 bg-gray-50 dark:bg-dark-background-secondary">
+        <div class="container px-4 mx-auto">
+            <h2 class="mb-4 text-3xl font-bold text-center md:text-4xl">My Skills</h2>
+            <p class="mb-16 text-xl text-center text-gray-600 dark:text-gray-400">Technologies and tools I use to bring
                 products to life</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Skill Card 1 -->
-                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
-                    <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-brands fa-html5 text-red-500 text-3xl"></i>
+                <div class="p-8 bg-white rounded-lg dark:bg-dark-background">
+                    <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-red-500/10">
+                        <i class="text-3xl text-red-500 fa-brands fa-html5"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">HTML5</h3>
-                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                    <h3 class="mb-4 text-xl font-bold">HTML5</h3>
+                    <div class="w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-dark-background">
                         <div class="w-[95%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
                 </div>
                 <!-- Skill Card 2 -->
-                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
-                    <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-brands fa-css3 text-blue-500 text-3xl"></i>
+                <div class="p-8 bg-white rounded-lg dark:bg-dark-background">
+                    <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-blue-500/10">
+                        <i class="text-3xl text-blue-500 fa-brands fa-css3"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">CSS3</h3>
-                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                    <h3 class="mb-4 text-xl font-bold">CSS3</h3>
+                    <div class="w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-dark-background">
                         <div class="w-[90%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
                 </div>
                 <!-- Skill Card 3 -->
-                <div class="bg-white dark:bg-dark-background p-8 rounded-lg">
-                    <div class="w-16 h-16 bg-yellow-500/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-brands fa-js text-yellow-500 text-3xl"></i>
+                <div class="p-8 bg-white rounded-lg dark:bg-dark-background">
+                    <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-yellow-500/10">
+                        <i class="text-3xl text-yellow-500 fa-brands fa-js"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">JavaScript</h3>
-                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                    <h3 class="mb-4 text-xl font-bold">JavaScript</h3>
+                    <div class="w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-dark-background">
                         <div class="w-[85%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
                 </div>
                 <!-- Skill Card 4 -->
-                <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg">
-                    <div class="w-16 h-16 bg-blue-400/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-brands fa-react text-blue-400 text-3xl"></i>
+                <div class="p-8 bg-white rounded-lg shadow-lg dark:bg-dark-background">
+                    <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-blue-400/10">
+                        <i class="text-3xl text-blue-400 fa-brands fa-react"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">React</h3>
-                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                    <h3 class="mb-4 text-xl font-bold">React</h3>
+                    <div class="w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-dark-background">
                         <div class="w-[80%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
                 </div>
                 <!-- Skill Card 5 -->
-                <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg">
-                    <div class="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-brands fa-git-alt text-orange-500 text-3xl"></i>
+                <div class="p-8 bg-white rounded-lg shadow-lg dark:bg-dark-background">
+                    <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-orange-500/10">
+                        <i class="text-3xl text-orange-500 fa-brands fa-git-alt"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Git</h3>
-                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                    <h3 class="mb-4 text-xl font-bold">Git</h3>
+                    <div class="w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-dark-background">
                         <div class="w-[85%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
                 </div>
                 <!-- Skill Card 6 -->
-                <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg">
-                    <div class="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-desktop text-purple-500 text-3xl"></i>
+                <div class="p-8 bg-white rounded-lg shadow-lg dark:bg-dark-background">
+                    <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-purple-500/10">
+                        <i class="text-3xl text-purple-500 fa-solid fa-desktop"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Responsive Design</h3>
-                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                    <h3 class="mb-4 text-xl font-bold">Responsive Design</h3>
+                    <div class="w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-dark-background">
                         <div class="w-[90%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
                 </div>
@@ -319,45 +325,45 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-24 translate-y-4 transition-all duration-500 opacity-0">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Featured Projects</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
+    <section id="projects" class="py-24 transition-all duration-500 translate-y-4 opacity-0">
+        <div class="container px-4 mx-auto">
+            <h2 class="mb-4 text-3xl font-bold text-center md:text-4xl">Featured Projects</h2>
+            <p class="mb-16 text-xl text-center text-gray-600 dark:text-gray-400">
                 Check out some of my recent work
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Project Card 1 -->
                 <div
-                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="h-48 relative">
-                        <img src="../assets/item-1.jpg" alt="Crypto Platform" class="w-full h-full object-cover">
+                    class="overflow-hidden transition-all duration-300 transform bg-white rounded-lg shadow-lg dark:bg-dark-background hover:shadow-xl hover:-translate-y-1">
+                    <div class="relative h-48">
+                        <img src="../assets/item-1.jpg" alt="Crypto Platform" class="object-cover w-full h-full">
                         <div class="absolute inset-0 bg-black/20"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-4">Crypto Platform</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                        <h3 class="mb-4 text-xl font-bold">Crypto Platform</h3>
+                        <p class="h-16 mb-4 text-gray-600 dark:text-gray-400">
                             A modern cryptocurrency trading platform with real-time price tracking and portfolio
                             management.
                         </p>
                         <div class="flex flex-wrap gap-2 my-6">
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">HTML5</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">CSS3</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">JavaScript</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">API</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">API</span>
                         </div>
                         <div class="flex gap-4">
                             <a href="#"
-                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                class="px-4 py-2 text-white transition-colors rounded-lg bg-primary hover:bg-blue-600">
                                 Youtube
                             </a>
                             <a href="#"
-                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                                <i class="fa-brands fa-github mr-2"></i>
+                                class="flex items-center text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">
+                                <i class="mr-2 fa-brands fa-github"></i>
                                 Code
                             </a>
                         </div>
@@ -365,35 +371,35 @@
                 </div>
                 <!-- Project Card 2 -->
                 <div
-                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="h-48 relative">
-                        <img src="../assets/item-2.jpg" alt="Crypto Platform" class="w-full h-full object-cover">
+                    class="overflow-hidden transition-all duration-300 transform bg-white rounded-lg shadow-lg dark:bg-dark-background hover:shadow-xl hover:-translate-y-1">
+                    <div class="relative h-48">
+                        <img src="../assets/item-2.jpg" alt="Crypto Platform" class="object-cover w-full h-full">
                         <div class="absolute inset-0 bg-black/20"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-4">AI Landing Page</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                        <h3 class="mb-4 text-xl font-bold">AI Landing Page</h3>
+                        <p class="h-16 mb-4 text-gray-600 dark:text-gray-400">
                             A stunning landing page showcasing AI services with interactive animations and modern
                             design.
                         </p>
                         <div class="flex flex-wrap gap-2 my-6">
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">HTML5</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">CSS3</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">JavaScript</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">API</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">API</span>
                         </div>
                         <div class="flex gap-4">
                             <a href="#"
-                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                class="px-4 py-2 text-white transition-colors rounded-lg bg-primary hover:bg-blue-600">
                                 Youtube
                             </a>
                             <a href="#"
-                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                                <i class="fa-brands fa-github mr-2"></i>
+                                class="flex items-center text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">
+                                <i class="mr-2 fa-brands fa-github"></i>
                                 Code
                             </a>
                         </div>
@@ -401,34 +407,34 @@
                 </div>
                 <!-- Project Card 3 -->
                 <div
-                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="h-48 relative">
-                        <img src="../assets/item-3.jpg" alt="Crypto Platform" class="w-full h-full object-cover">
+                    class="overflow-hidden transition-all duration-300 transform bg-white rounded-lg shadow-lg dark:bg-dark-background hover:shadow-xl hover:-translate-y-1">
+                    <div class="relative h-48">
+                        <img src="../assets/item-3.jpg" alt="Crypto Platform" class="object-cover w-full h-full">
                         <div class="absolute inset-0 bg-black/20"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-4">AI Image Detector</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                        <h3 class="mb-4 text-xl font-bold">AI Image Detector</h3>
+                        <p class="h-16 mb-4 text-gray-600 dark:text-gray-400">
                             An intelligent image detection system that can identify and classify objects in real-time.
                         </p>
                         <div class="flex flex-wrap gap-2 my-6">
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">HTML5</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">CSS3</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">JavaScript</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">API</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">API</span>
                         </div>
                         <div class="flex gap-4">
                             <a href="#"
-                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                class="px-4 py-2 text-white transition-colors rounded-lg bg-primary hover:bg-blue-600">
                                 Youtube
                             </a>
                             <a href="#"
-                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                                <i class="fa-brands fa-github mr-2"></i>
+                                class="flex items-center text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">
+                                <i class="mr-2 fa-brands fa-github"></i>
                                 Code
                             </a>
                         </div>
@@ -436,34 +442,34 @@
                 </div>
                 <!-- Project Card 4 -->
                 <div
-                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="h-48 relative">
-                        <img src="../assets/item-3.jpg" alt="Crypto Platform" class="w-full h-full object-cover">
+                    class="overflow-hidden transition-all duration-300 transform bg-white rounded-lg shadow-lg dark:bg-dark-background hover:shadow-xl hover:-translate-y-1">
+                    <div class="relative h-48">
+                        <img src="../assets/item-3.jpg" alt="Crypto Platform" class="object-cover w-full h-full">
                         <div class="absolute inset-0 bg-black/20"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-4">AI Image Detector</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                        <h3 class="mb-4 text-xl font-bold">AI Image Detector</h3>
+                        <p class="h-16 mb-4 text-gray-600 dark:text-gray-400">
                             An intelligent image detection system that can identify and classify objects in real-time.
                         </p>
                         <div class="flex flex-wrap gap-2 my-6">
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">HTML5</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">CSS3</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">JavaScript</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">API</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">API</span>
                         </div>
                         <div class="flex gap-4">
                             <a href="#"
-                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                class="px-4 py-2 text-white transition-colors rounded-lg bg-primary hover:bg-blue-600">
                                 Youtube
                             </a>
                             <a href="#"
-                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                                <i class="fa-brands fa-github mr-2"></i>
+                                class="flex items-center text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">
+                                <i class="mr-2 fa-brands fa-github"></i>
                                 Code
                             </a>
                         </div>
@@ -471,34 +477,34 @@
                 </div>
                 <!-- Project Card 5 -->
                 <div
-                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="h-48 relative">
-                        <img src="../assets/item-3.jpg" alt="Crypto Platform" class="w-full h-full object-cover">
+                    class="overflow-hidden transition-all duration-300 transform bg-white rounded-lg shadow-lg dark:bg-dark-background hover:shadow-xl hover:-translate-y-1">
+                    <div class="relative h-48">
+                        <img src="../assets/item-3.jpg" alt="Crypto Platform" class="object-cover w-full h-full">
                         <div class="absolute inset-0 bg-black/20"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-4">AI Image Detector</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                        <h3 class="mb-4 text-xl font-bold">AI Image Detector</h3>
+                        <p class="h-16 mb-4 text-gray-600 dark:text-gray-400">
                             An intelligent image detection system that can identify and classify objects in real-time.
                         </p>
                         <div class="flex flex-wrap gap-2 my-6">
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">HTML5</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">CSS3</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">JavaScript</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">API</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">API</span>
                         </div>
                         <div class="flex gap-4">
                             <a href="#"
-                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                class="px-4 py-2 text-white transition-colors rounded-lg bg-primary hover:bg-blue-600">
                                 Youtube
                             </a>
                             <a href="#"
-                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                                <i class="fa-brands fa-github mr-2"></i>
+                                class="flex items-center text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">
+                                <i class="mr-2 fa-brands fa-github"></i>
                                 Code
                             </a>
                         </div>
@@ -506,34 +512,34 @@
                 </div>
                 <!-- Project Card 6 -->
                 <div
-                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="h-48 relative">
-                        <img src="../assets/item-3.jpg" alt="Crypto Platform" class="w-full h-full object-cover">
+                    class="overflow-hidden transition-all duration-300 transform bg-white rounded-lg shadow-lg dark:bg-dark-background hover:shadow-xl hover:-translate-y-1">
+                    <div class="relative h-48">
+                        <img src="../assets/item-3.jpg" alt="Crypto Platform" class="object-cover w-full h-full">
                         <div class="absolute inset-0 bg-black/20"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-4">AI Image Detector</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                        <h3 class="mb-4 text-xl font-bold">AI Image Detector</h3>
+                        <p class="h-16 mb-4 text-gray-600 dark:text-gray-400">
                             An intelligent image detection system that can identify and classify objects in real-time.
                         </p>
                         <div class="flex flex-wrap gap-2 my-6">
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">HTML5</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">CSS3</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">JavaScript</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">API</span>
+                                class="px-3 py-1 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-dark-background-secondary dark:text-gray-400">API</span>
                         </div>
                         <div class="flex gap-4">
                             <a href="#"
-                                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                class="px-4 py-2 text-white transition-colors rounded-lg bg-primary hover:bg-blue-600">
                                 Youtube
                             </a>
                             <a href="#"
-                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                                <i class="fa-brands fa-github mr-2"></i>
+                                class="flex items-center text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">
+                                <i class="mr-2 fa-brands fa-github"></i>
                                 Code
                             </a>
                         </div>
@@ -546,52 +552,52 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 translate-y-4 transition-all duration-500 opacity-0">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Get In Touch</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
+    <section id="contact" class="py-24 transition-all duration-500 translate-y-4 opacity-0">
+        <div class="container px-4 mx-auto">
+            <h2 class="mb-4 text-3xl font-bold text-center md:text-4xl">Get In Touch</h2>
+            <p class="mb-16 text-xl text-center text-gray-600 dark:text-gray-400">
                 Interested in working together? Let's connect
             </p>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
                 <!-- Contact Info -->
-                <div class="lg:col-span-1 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-6">
+                <div class="grid grid-cols-1 gap-6 lg:col-span-1 md:grid-cols-3 lg:grid-cols-1">
                     <!-- Email -->
-                    <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
-                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fa-solid fa-envelope text-primary text-xl"></i>
+                    <div class="p-6 text-center bg-white rounded-lg shadow-lg dark:bg-dark-background">
+                        <div class="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10">
+                            <i class="text-xl fa-solid fa-envelope text-primary"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Email</h3>
+                        <h3 class="mb-2 text-xl font-bold">Email</h3>
                         <p class="text-gray-600 dark:text-gray-400">samuel.campeon@gmail.com</p>
                     </div>
                     <!-- Location -->
-                    <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
-                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fa-solid fa-map-location-dot text-primary text-xl"></i>
+                    <div class="p-6 text-center bg-white rounded-lg shadow-lg dark:bg-dark-background">
+                        <div class="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10">
+                            <i class="text-xl fa-solid fa-map-location-dot text-primary"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Location</h3>
+                        <h3 class="mb-2 text-xl font-bold">Location</h3>
                         <p class="text-gray-600 dark:text-gray-400">Colombia - Antioquia, Medellín</p>
                     </div>
                     <!-- Social -->
-                    <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
-                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fa-solid fa-globe text-primary text-xl"></i>
+                    <div class="p-6 text-center bg-white rounded-lg shadow-lg dark:bg-dark-background">
+                        <div class="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10">
+                            <i class="text-xl fa-solid fa-globe text-primary"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Social</h3>
+                        <h3 class="mb-2 text-xl font-bold">Social</h3>
                         <div class="flex justify-center space-x-4">
                             <!-- GITHUB  -->
                             <a href="https://github.com/Legolitas12" target="_blank" rel="noopener"
-                                class="w-10 h-10 bg-gray-100 dark:bg-dark-background-secondary rounded-full flex items-center justify-center text-gray-600 hover:text-primary dark:hover:text-primary dark:text-gray-400 transition-all duration-300">
+                                class="flex items-center justify-center w-10 h-10 text-gray-600 transition-all duration-300 bg-gray-100 rounded-full dark:bg-dark-background-secondary hover:text-primary dark:hover:text-primary dark:text-gray-400">
                                 <i class="fa-brands fa-github"></i>
                             </a>
                             <!-- LINKEDIN  -->
                             <a href="https://www.linkedin.com/in/samuelalejandro-patino/" target="_blank" rel="noopener"
-                                class="w-10 h-10 bg-gray-100 dark:bg-dark-background-secondary rounded-full flex items-center justify-center text-gray-600 hover:text-primary dark:hover:text-primary dark:text-gray-400 transition-all duration-300">
+                                class="flex items-center justify-center w-10 h-10 text-gray-600 transition-all duration-300 bg-gray-100 rounded-full dark:bg-dark-background-secondary hover:text-primary dark:hover:text-primary dark:text-gray-400">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                             <!-- TWITTER  -->
                             <a href="#"
-                                class="w-10 h-10 bg-gray-100 dark:bg-dark-background-secondary rounded-full flex items-center justify-center text-gray-600 hover:text-primary dark:hover:text-primary dark:text-gray-400 transition-all duration-300">
+                                class="flex items-center justify-center w-10 h-10 text-gray-600 transition-all duration-300 bg-gray-100 rounded-full dark:bg-dark-background-secondary hover:text-primary dark:hover:text-primary dark:text-gray-400">
                                 <i class="fa-brands fa-twitter"></i>
                             </a>
                         </div>
@@ -600,29 +606,29 @@
 
                 <!-- Contact Form -->
                 <div class="lg:col-span-2">
-                    <form id="contactForm" class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+                    <form id="contactForm" class="p-8 bg-white rounded-lg shadow-lg dark:bg-dark-background">
+                        <h3 class="mb-6 text-2xl font-bold">Send Me a Message</h3>
                         <div class="space-y-6">
                             <div>
                                 <label for="name"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                                    class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
                                 <input type="text" name="name" id="name" required
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none">
+                                    class="w-full px-4 py-3 text-gray-900 transition-colors bg-white border border-gray-200 rounded-lg outline-none dark:border-gray-700 dark:bg-dark-background-secondary dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent">
                             </div>
                             <div>
                                 <label for="email"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                                    class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
                                 <input type="email" name="email" id="email" required
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none">
+                                    class="w-full px-4 py-3 text-gray-900 transition-colors bg-white border border-gray-200 rounded-lg outline-none dark:border-gray-700 dark:bg-dark-background-secondary dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent">
                             </div>
                             <div>
                                 <label for="message"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                                    class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
                                 <textarea type="text" name="message" id="message" rows="5" required
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none"></textarea>
+                                    class="w-full px-4 py-3 text-gray-900 transition-colors bg-white border border-gray-200 rounded-lg outline-none dark:border-gray-700 dark:bg-dark-background-secondary dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
                             </div>
                             <button type="submit"
-                                class="w-full px-8 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10">Send
+                                class="w-full px-8 py-3 text-white transition-all duration-300 transform rounded-lg shadow-lg bg-primary hover:bg-blue-600 hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10">Send
                                 Message</button>
                         </div>
                     </form>
@@ -634,60 +640,73 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 dark:bg-dark-background-secondary py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+    <footer class="py-12 bg-gray-50 dark:bg-dark-background-secondary">
+        <div class="container px-4 mx-auto">
+            <div class="flex flex-col items-center justify-between mb-8 md:flex-row">
                 <div class="flex items-center mb-4 md:mb-0">
                     <span class="text-xl font-extrabold">Samuel Patiño</span>
-                    <span class="text-primary text-2xl ml-1">←</span>
+                    <span class="ml-1 text-2xl text-primary">←</span>
                 </div>
                 <ul class="flex flex-wrap justify-center gap-6 mb-0">
                     <li>
                         <a href="#features"
-                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Showcase</a>
+                            class="text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">Showcase</a>
                     </li>
                     <li>
                         <a href="#about"
-                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                            class="text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">About</a>
                     </li>
                     <li>
                         <a href="#skills"
-                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Skills</a>
+                            class="text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">Skills</a>
                     </li>
                     <li>
                         <a href="#projects"
-                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
+                            class="text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">Projects</a>
                     </li>
                     <li>
                         <a href="#contact"
-                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                            class="text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">Contact</a>
                     </li>
                 </ul>
                 <div class="flex gap-4">
                     <!-- GITHUB  -->
                     <a href="https://github.com/Legolitas12" target="_blank" rel="noopener"
-                        class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                        class="text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">
                         <i class="fa-brands fa-github"></i>
                     </a>
                     <!-- LINKEDIN  -->
                     <a href="https://www.linkedin.com/in/samuelalejandro-patino/" target="_blank" rel="noopener"
-                        class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                        class="text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
                     <!-- TWITTER  -->
                     <a href="#"
-                        class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                        class="text-gray-600 transition-colors dark:text-gray-400 hover:text-primary dark:hover:text-primary">
                         <i class="fa-brands fa-twitter"></i>
                     </a>
                 </div>
             </div>
-            <div class="text-center text-gray-600 dark:text-gray-400 text-sm">
+            <div class="text-sm text-center text-gray-600 dark:text-gray-400">
                 <p>&copy; 2025 Samuel Patiño Portfolio. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    emailjs.sendForm('service_i9dfda3', 'template_9w3vewa', this, 'gP2y10SXe5LpWMUhf')
+        .then(function() {
+            alert('¡Mensaje enviado correctamente!');
+            document.getElementById('contactForm').reset();
+        }, function(error) {
+            alert('Error al enviar el mensaje. Intenta de nuevo.');
+            console.log(error);
+        });
+});
+</script>
 </body>
 
 </html>

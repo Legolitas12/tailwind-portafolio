@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const commandSpan = document.querySelector('.command-text');
 
     if (terminalContainer && terminalContent && commandSpan) {
-        const commandText = "git clone https://github.com/";
+        const commandText = "git clone https://github.com/Legolitas12/tailwind-portafolio.git";
 
         let i = 0;
         const typeCommand = () => {
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 // Add blinking cursor after typing
                 const cursor = document.createElement('span');
-                cursor.className = 'inline-block w-2 h-5 bg-gray-900 dark:bg-white ml-1 animate-blink align-middle';
+                cursor.className = 'inline-block w-2 h-5 ml-1 align-middle bg-gray-900 dark:bg-white animate-blink';
                 terminalContent.appendChild(cursor);
             }
         };
